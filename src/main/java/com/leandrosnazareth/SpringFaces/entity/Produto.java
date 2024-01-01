@@ -28,6 +28,6 @@ public class Produto implements Serializable {
     private int quantidade;
     private BigDecimal valor;
     private Date dataValidade;
-    private TipoProduto tipoProduto;
+    // private TipoProduto tipoProduto;
 
 }

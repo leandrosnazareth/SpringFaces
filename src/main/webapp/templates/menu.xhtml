@@ -14,15 +14,7 @@
 
             <p:menubar>
                 <p:submenu label="Arquivos" icon="pi pi-file">
-                    <p:menuitem value="View" action="#{homeController.openLevel1}">
-                        <p:ajax event="dialogReturn" listener="#{homeController.onReturnFromLevel1()}" update="@form"
-                            process="@this" />
-                    </p:menuitem>
-                    <p:menuitem value="Index 2" action="#{produtoController.goToIndex()}" process="@this" />
-                    <p:menuitem value="Index 3" action="#{produtoController.home()}" update="@form" process="@this" />
-                    <p:menuitem value="Index 4" outcome="/views/home" />
-                    <p:menuitem value="Index 5" url="home.xhtml" />
-                    <p:menuitem value="Sobre" url="#" />
+                    <p:menuitem value="Sobre" url="home.xhtml" />
                     <p:separator />
                     <p:menuitem value="Sair" url="http://www.primefaces.org" />
                 </p:submenu>
@@ -30,31 +22,9 @@
                 <p:submenu label="Cadastro" icon="pi pi-plus-circle">
                     <p:menuitem value="Produto" url="prod.xhtml" />
                     <p:menuitem value="Tipo Produto" url="tipoProduto.xhtml" />
-                    <p:menuitem value="Usuario" url="#" />
-                    <p:menuitem value="Home" url="home.xhtml" />
-                    <p:menuitem value="Home 2" outcome="/views/home" />
                 </p:submenu>
 
-                <p:submenu label="Help" icon="pi pi-question">
-                    <p:menuitem value="Contents" url="#" />
-                    <p:submenu label="Search" icon="pi pi-search">
-                        <p:submenu label="Text">
-                            <p:menuitem value="Workspace" url="#" />
-                        </p:submenu>
-                        <p:menuitem value="File" url="#" />
-                    </p:submenu>
-                </p:submenu>
-
-                <p:submenu label="Actions" icon="pi pi-cog">
-                    <p:submenu label="Ajax" icon="pi pi-refresh">
-                        <p:menuitem value="Save" action="#{menuView.save}" icon="pi pi-save" update="messages" />
-                        <p:menuitem value="Update" action="#{menuView.update}" icon="pi pi-refresh" update="messages" />
-                    </p:submenu>
-                    <p:submenu label="Non-Ajax" icon="pi pi-clone">
-                        <p:menuitem value="Delete" action="#{menuView.delete}" icon="pi pi-times" update="messages"
-                            ajax="false" />
-                    </p:submenu>
-                </p:submenu>
+                <p:menuitem value="Help" url="https://www.primefaces.org/documentation/" icon="pi pi-sign-out" />
 
                 <p:menuitem value="Sair" url="http://www.primefaces.org" icon="pi pi-sign-out" />
 
