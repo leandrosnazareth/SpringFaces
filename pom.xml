@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+      <!-- <version>3.2.1</version> -->
+      <version>2.7.0</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.leandrosnazareth</groupId>
+	<artifactId>SpringFaces</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>SpringFaces</name>
+	<description>Spring Boot 2.7.0 Java 17 Primefaces 13 Integration</description>
+
+	<properties>
+		<java.version>17</java.version>
+	 </properties>
+  
+	 <dependencies>
+		<dependency>
+		   <groupId>org.springframework.boot</groupId>
+		   <artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+		   <groupId>org.springframework.boot</groupId>
+		   <artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+		   <groupId>org.apache.tomcat.embed</groupId>
+		   <artifactId>tomcat-embed-jasper</artifactId>
+		</dependency>
+		<dependency>
+		   <groupId>org.primefaces</groupId>
+		   <artifactId>primefaces</artifactId>
+		   <version>13.0.4</version>
+		</dependency>
+		<!-- driver de coneção com o banco de dados -->
+		<dependency>
+		   <groupId>mysql</groupId>
+		   <artifactId>mysql-connector-java</artifactId>
+		   <scope>runtime</scope>
+		</dependency>
+		<!-- biblioteca Java focada em produtividade e redução de código -->
+		<dependency>
+		   <groupId>org.projectlombok</groupId>
+		   <artifactId>lombok</artifactId>
+		   <optional>true</optional>
+		</dependency>
+  
+		<dependency>
+		   <groupId>com.sun.faces</groupId>
+		   <artifactId>jsf-api</artifactId>
+		   <version>2.2.20</version>
+		</dependency>
+		<dependency>
+		   <groupId>com.sun.faces</groupId>
+		   <artifactId>jsf-impl</artifactId>
+		   <version>2.2.20</version>
+		</dependency>
+		<dependency>
+		   <groupId>javax.enterprise</groupId>
+		   <artifactId>cdi-api</artifactId>
+		   <version>2.0.SP1</version>
+		</dependency>
+  
+		<!-- TESTS -->
+		<dependency>
+		   <groupId>org.springframework.boot</groupId>
+		   <artifactId>spring-boot-starter-test</artifactId>
+		   <scope>test</scope>
+		</dependency>
+		<dependency>
+		   <groupId>org.testcontainers</groupId>
+		   <artifactId>junit-jupiter</artifactId>
+		   <version>1.17.2</version>
+		   <scope>test</scope>
+		</dependency>
+		<dependency>
+		   <groupId>org.testcontainers</groupId>
+		   <artifactId>mysql</artifactId>
+		   <scope>test</scope>
+		</dependency>
+		<!-- Fornece reinicializações rápidas de aplicativos, LiveReload e configurações para uma
+		experiência de desenvolvimento aprimorada.  -->
+		<dependency>
+		   <groupId>org.springframework.boot</groupId>
+		   <artifactId>spring-boot-devtools</artifactId>
+		   <scope>runtime</scope>
+		   <optional>true</optional>
+		</dependency>
+		<!-- framework open-source para testes software java -->
+		<dependency>
+		   <groupId>junit</groupId>
+		   <artifactId>junit</artifactId>
+		   <scope>test</scope>
+		</dependency>
+  
+	 </dependencies>
+  
+	 <!-- Test Containers   -->
+	 <dependencyManagement>
+		<dependencies>
+		   <dependency>
+			  <groupId>org.testcontainers</groupId>
+			  <artifactId>testcontainers-bom</artifactId>
+			  <version>1.17.2</version>
+			  <type>pom</type>
+			  <scope>import</scope>
+		   </dependency>
+		</dependencies>
+	 </dependencyManagement>
+  
+  
+	 <build>
+		<plugins>
+		   <plugin>
+			  <groupId>org.springframework.boot</groupId>
+			  <artifactId>spring-boot-maven-plugin</artifactId>
+			  <configuration>
+				 <excludes>
+					<exclude>
+					   <groupId>org.projectlombok</groupId>
+					   <artifactId>lombok</artifactId>
+					</exclude>
+				 </excludes>
+			  </configuration>
+		   </plugin>
+		</plugins>
+	 </build>
+  
+  </project>

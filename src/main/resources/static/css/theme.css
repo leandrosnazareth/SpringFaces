@@ -1,0 +1,13 @@
+.menu-bar {
+    background-color: #f2f2f2;
+    /* background-color: #000000; */
+
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%; /* Adicionado para ocupar a largura total */
+    align-content: center;
+}
+
+.menu-button {
+    margin-right: 10px;
+}

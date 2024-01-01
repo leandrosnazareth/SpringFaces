@@ -1,0 +1,30 @@
+<!-- src/main/webapp/WEB-INF/templates/template.xhtml -->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:p="http://primefaces.org/ui"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+    <title>Cadastro de Produtos</title>
+</h:head>
+
+<h:body>
+    <h:panelGroup id="layoutWrapper" style="display:flex; flex-direction: column; height: 100vh;">
+        <!-- Inclui o menu na parte superior -->
+        <ui:insert name="menu" />
+
+        <div style="flex: 1; overflow-y: auto; padding: 10px;">
+            <!-- Conteúdo específico da página vai aqui -->
+            <ui:insert name="content" />
+        </div>
+
+        <!-- Barra de status inferior -->
+        <div style="background-color: #f2f2f2; padding: 0px; text-align: center; height: 40px;">
+            <!-- Adicione suas informações estatísticas aqui -->
+            <p>Status: Online - Versão: 1.0</p>
+            <!-- Adicione mais informações conforme necessário -->
+        </div>
+    </h:panelGroup>
+</h:body>
+
+</html>
