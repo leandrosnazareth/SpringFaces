@@ -11,8 +11,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.leandrosnazareth.SpringFaces.entity.Produto;
 import com.leandrosnazareth.SpringFaces.repository.ProdutoRepository;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Named
 @ViewScoped
+@Getter
+@Setter
 public class ProdutoController {
 
     private Produto produto = new Produto();
@@ -52,22 +57,6 @@ public class ProdutoController {
     public void refresh() {
         System.out.println("Passei no refesh");
         produto = new Produto();
-    }
-
-    public List<Produto> getprodutos() {
-        return produtos;
-    }
-
-    public void setprodutos(List<Produto> produtos) {
-        this.produtos = produtos;
-    }
-
-    public Produto getProduto() {
-        return produto;
-    }
-
-    public void setProduto(Produto produto) {
-        this.produto = produto;
     }
 
 }

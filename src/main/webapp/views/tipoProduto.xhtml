@@ -1,0 +1,60 @@
+<!-- src/main/webapp/WEB-INF/views/TipoProduto.xhtml -->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:p="http://primefaces.org/ui"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<f:metadata>
+    <f:event type="preRenderView" listener="#{tipoProdutoController.findAllTiposProdutos}" />
+</f:metadata>
+
+<ui:composition template="/templates/template.xhtml">
+    <ui:define name="content">
+        <h:form>
+            <p:panel>
+                <f:facet name="header">
+                    Cadastro de Tipo de Produtos
+                </f:facet>
+                <h:panelGrid columns="2">
+                    <p:outputLabel value="Nome" />
+                    <p:inputText value="#{tipoProdutoController.tipoProduto.nome}" required="true" />
+                    <p:commandButton value="Salvar" action="#{tipoProdutoController.save()}" update="@form"
+                        process="@parent" />
+                    <p:commandButton value="Limpar" action="#{tipoProdutoController.refresh()}" update="@form"
+                        process="@parent" />
+
+                </h:panelGrid>
+            </p:panel>
+
+            <br />
+            <!-- TABELA -->
+            <p:panel>
+                <p:dataTable var="tipoProduto" value="#{tipoProdutoController.tipoProdutos}" rows="10" paginator="true"
+                    paginatorPosition="both"
+                    paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                    currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records"
+                    rowsPerPageTemplate="5,10,{ShowAll|'All'}">
+
+                    <p:column headerText="Id" width="10%">
+                        <h:outputText value="#{tipoProduto.id}" />
+                    </p:column>
+
+                    <p:column headerText="Nome">
+                        <h:outputText value="#{tipoProduto.nome}" />
+                    </p:column>
+
+                    <p:column headerText="Options" width="10%">
+                        <p:commandButton icon="pi pi-pencil" action="#{tipoProdutoController.edit(tipoProduto)}" update="@form"
+                            process="@this" />
+                    </p:column>
+
+                </p:dataTable>
+            </p:panel>
+        </h:form>
+    </ui:define>
+    <ui:define name="menu">
+        <ui:include src="/templates/menu.xhtml" />
+    </ui:define>
+</ui:composition>
+
+</html>
