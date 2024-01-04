@@ -29,10 +29,8 @@ SpringFaces é um projeto que integra Spring Boot (versão 2.7.0) com Java 17 e 
 2. **Banco de dados:**
     Banco de dados: `dbspringfaces`
 
---
--- Estrutura da tabela `produto`
---
-
+**Estrutura da tabela produto:**
+   ```bash
 CREATE TABLE `produto` (
   `id` bigint(20) NOT NULL,
   `data_validade` datetime DEFAULT NULL,
@@ -41,7 +39,6 @@ CREATE TABLE `produto` (
   `quantidade` int(11) NOT NULL,
   `valor` decimal(19,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 --
 -- Extraindo dados da tabela `produto`
 --
@@ -66,6 +63,3 @@ CREATE TABLE `tipo_produto` (
 
 INSERT INTO `tipo_produto` (`id`, `nome`) VALUES
 (1, 'Produto 1');
-
-
-   
