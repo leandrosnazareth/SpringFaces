@@ -29,8 +29,11 @@ SpringFaces é um projeto que integra Spring Boot (versão 2.7.0) com Java 17 e 
 2. **Banco de dados:**
     Banco de dados: `dbspringfaces`
 
-**Estrutura da tabela produto:**
-   ```bash
+```bash
+--
+--  Estrutura da tabela `produto`
+--
+
 CREATE TABLE `produto` (
   `id` bigint(20) NOT NULL,
   `data_validade` datetime DEFAULT NULL,
